@@ -18,3 +18,4 @@ Store.create({name: "Yaletown", annual_revenue: 430000, mens_apparel: true, wome
   puts "Store: #{store.name} Revenue: #{store.annual_revenue}"
 }
 
+@mens_stores = Store.where(womens_apparel: true)
