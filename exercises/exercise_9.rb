@@ -8,6 +8,17 @@ require_relative './exercise_6'
 require_relative './exercise_7'
 require_relative './exercise_8'
 
+class Store
+  before_destroy :keep_stores_with_employees
+
+  private
+
+  def keep_stores_with_employees
+    false unless self.employees.size == 0
+  end
+
+end
+
 # Make sure non-empty stores cannot be destroyed
 @store1 = Store.find(1)
 if @store1.destroy
