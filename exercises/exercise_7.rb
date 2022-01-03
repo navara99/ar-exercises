@@ -10,7 +10,7 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
-
+=begin
 class Store 
   validates :name, :annual_revenue, presence: true
   validates :name, length: { minimum: 3 }
@@ -43,6 +43,6 @@ errors = Store.create({ name: store, mens_apparel: sells_mens_apparel, womens_ap
 errors.each { |message|
   puts message
 }
-
+=end
 
 
