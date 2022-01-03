@@ -15,3 +15,5 @@ puts "Total Revenue: #{total}"
 average = Store.average(:annual_revenue)
 puts "Average Revenue: #{average}"
 
+num_stores_over_million = Store.where("annual_revenue > 1000000").count()
+puts "There are #{num_stores_over_million} stores generating over 1M per year in revenue."
