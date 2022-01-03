@@ -13,9 +13,18 @@ Store.create({name: "Whistler", annual_revenue: 1900000, mens_apparel: true, wom
 Store.create({name: "Yaletown", annual_revenue: 430000, mens_apparel: true, womens_apparel: true})
 
 @mens_stores = Store.where(mens_apparel: true)
+@womens_stores = Store.where(womens_apparel: true).where("annual_revenue < 1000000")
 
-@mens_stores.each { |store|
+def print_stores(stores)
+  stores.each { |store|
   puts "Store: #{store.name} Revenue: #{store.annual_revenue}"
-}
+  }
+end
 
-@mens_stores = Store.where(womens_apparel: true)
+print_stores(@mens_stores)
+puts "----------"
+print_stores(@womens_stores)
+
+
+
+
